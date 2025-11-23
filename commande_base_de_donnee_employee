@@ -1,0 +1,191 @@
+CREATE TABLE employee (
+    employee_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    job_title VARCHAR(100),
+    phone_number VARCHAR(20),
+    social_security_number VARCHAR(20),
+    emergency_contact VARCHAR(100),
+    manager_name VARCHAR(100)
+);
+
+
+INSERT INTO employee (first_name, last_name, job_title, phone_number, social_security_number, emergency_contact, manager_name) VALUES
+('Alice', 'Martin', 'Software Engineer', '555-0101', '123-45-6789', 'Bob Martin 555-0102', 'David Smith'),
+('Bob', 'Johnson', 'Project Manager', '555-0103', '987-65-4321', 'Alice Johnson 555-0104', 'Carol White'),
+('Carol', 'White', 'HR Specialist', '555-0105', '111-22-3333', 'David White 555-0106', 'Eve Black'),
+('David', 'Smith', 'Team Lead', '555-0107', '444-55-6666', 'Alice Smith 555-0108', 'Frank Green'),
+('Eve', 'Black', 'QA Engineer', '555-0109', '777-88-9999', 'George Black 555-0110', 'David Smith'),
+('Frank', 'Green', 'DevOps Engineer', '555-0111', '222-33-4444', 'Helen Green 555-0112', 'David Smith'),
+('George', 'Brown', 'Business Analyst', '555-0113', '555-66-7777', 'Irene Brown 555-0114', 'Bob Johnson'),
+('Helen', 'Davis', 'UX Designer', '555-0115', '888-99-0000', 'John Davis 555-0116', 'Carol White'),
+('Irene', 'Miller', 'Software Engineer', '555-0117', '101-12-1314', 'Jack Miller 555-0118', 'Alice Martin'),
+('Jack', 'Wilson', 'Database Administrator', '555-0119', '151-61-7171', 'Karen Wilson 555-0120', 'Frank Green'),
+('Karen', 'Moore', 'Product Owner', '555-0121', '181-91-2122', 'Larry Moore 555-0122', 'Bob Johnson'),
+('Larry', 'Taylor', 'Scrum Master', '555-0123', '232-42-5252', 'Mona Taylor 555-0124', 'Carol White'),
+('Mona', 'Anderson', 'Software Engineer', '555-0125', '262-72-8282', 'Nina Anderson 555-0126', 'Alice Martin'),
+('Nina', 'Thomas', 'HR Specialist', '555-0127', '292-92-9292', 'Oscar Thomas 555-0128', 'Eve Black'),
+('Oscar', 'Jackson', 'QA Engineer', '555-0129', '303-13-1313', 'Patricia Jackson 555-0130', 'David Smith'),
+('Patricia', 'White', 'UX Designer', '555-0131', '333-23-3434', 'Quincy White 555-0132', 'Carol White'),
+('Quincy', 'Harris', 'Business Analyst', '555-0133', '353-63-7373', 'Rachel Harris 555-0134', 'Bob Johnson'),
+('Rachel', 'Martin', 'Software Engineer', '555-0135', '383-93-8383', 'Steve Martin 555-0136', 'Alice Martin'),
+('Steve', 'Lee', 'DevOps Engineer', '555-0137', '404-14-1414', 'Tracy Lee 555-0138', 'David Smith'),
+('Tracy', 'Walker', 'Team Lead', '555-0139', '434-44-3434', 'Uma Walker 555-0140', 'David Smith');
+
+
+INSERT INTO employee (first_name, last_name, job_title, phone_number, social_security_number, emergency_contact, manager_name) VALUES
+('Léa', 'Moreau', 'Software Engineer', '555-0201', '101-23-4567', 'Maxime Moreau 555-0202', 'Sophie Durand'),
+('Maxime', 'Durand', 'Project Manager', '555-0203', '202-34-5678', 'Léa Durand 555-0204', 'Julien Bernard'),
+('Sophie', 'Bernard', 'HR Specialist', '555-0205', '303-45-6789', 'Clément Bernard 555-0206', 'Isabelle Petit'),
+('Clément', 'Petit', 'Team Lead', '555-0207', '404-56-7890', 'Sophie Petit 555-0208', 'Éric Robert'),
+('Éric', 'Robert', 'QA Engineer', '555-0209', '505-67-8901', 'Nathalie Robert 555-0210', 'Clément Petit'),
+('Nathalie', 'Lemoine', 'DevOps Engineer', '555-0211', '606-78-9012', 'Éric Lemoine 555-0212', 'Éric Robert'),
+('Julien', 'Garnier', 'Business Analyst', '555-0213', '707-89-0123', 'Aurélie Garnier 555-0214', 'Maxime Durand'),
+('Aurélie', 'Fabre', 'UX Designer', '555-0215', '808-90-1234', 'Vincent Fabre 555-0216', 'Sophie Bernard'),
+('Vincent', 'Marchand', 'Software Engineer', '555-0217', '909-01-2345', 'Céline Marchand 555-0218', 'Léa Moreau'),
+('Céline', 'Rousseau', 'Database Administrator', '555-0219', '112-23-3456', 'Thomas Rousseau 555-0220', 'Nathalie Lemoine'),
+('Thomas', 'Faure', 'Product Owner', '555-0221', '223-34-4567', 'Claire Faure 555-0222', 'Maxime Durand'),
+('Claire', 'Gauthier', 'Scrum Master', '555-0223', '334-45-5678', 'Antoine Gauthier 555-0224', 'Sophie Bernard'),
+('Antoine', 'Blanc', 'Software Engineer', '555-0225', '445-56-6789', 'Marie Blanc 555-0226', 'Léa Moreau'),
+('Marie', 'Leroy', 'HR Specialist', '555-0227', '556-67-7890', 'Jean Leroy 555-0228', 'Clément Petit'),
+('Jean', 'Perrin', 'QA Engineer', '555-0229', '667-78-8901', 'Élodie Perrin 555-0230', 'Éric Robert'),
+('Élodie', 'Clément', 'UX Designer', '555-0231', '778-89-9012', 'Benoît Clément 555-0232', 'Sophie Bernard'),
+('Benoît', 'Vidal', 'Business Analyst', '555-0233', '889-90-0123', 'Charlotte Vidal 555-0234', 'Maxime Durand'),
+('Charlotte', 'Renaud', 'Software Engineer', '555-0235', '990-01-1234', 'Pierre Renaud 555-0236', 'Léa Moreau'),
+('Pierre', 'Meyer', 'DevOps Engineer', '555-0237', '101-12-2345', 'Lucie Meyer 555-0238', 'Éric Robert'),
+('Lucie', 'Carre', 'Team Lead', '555-0239', '212-23-3456', 'Marc Carre 555-0240', 'Clément Petit');
+
+INSERT INTO employee (first_name, last_name, job_title, phone_number, social_security_number, emergency_contact, manager_name) VALUES
+('Amélie', 'Dupont', 'Software Engineer', '555-0301', '121-34-5678', 'Bastien Dupont 555-0302', 'Claire Martin'),
+('Bastien', 'Martin', 'Project Manager', '555-0303', '232-45-6789', 'Amélie Martin 555-0304', 'Julien Lefevre'),
+('Claire', 'Lefevre', 'HR Specialist', '555-0305', '343-56-7890', 'David Lefevre 555-0306', 'Sophie Dubois'),
+('David', 'Dubois', 'Team Lead', '555-0307', '454-67-8901', 'Emma Dubois 555-0308', 'Marc Bernard'),
+('Emma', 'Bernard', 'QA Engineer', '555-0309', '565-78-9012', 'Félix Bernard 555-0310', 'David Dubois'),
+('Félix', 'Morel', 'DevOps Engineer', '555-0311', '676-89-0123', 'Amélie Morel 555-0312', 'David Dubois'),
+('Gabriel', 'Roux', 'Business Analyst', '555-0313', '787-90-1234', 'Hélène Roux 555-0314', 'Bastien Martin'),
+('Hélène', 'Petit', 'UX Designer', '555-0315', '898-01-2345', 'Ismaël Petit 555-0316', 'Claire Lefevre'),
+('Ismaël', 'Guerin', 'Software Engineer', '555-0317', '909-12-3456', 'Juliette Guerin 555-0318', 'Amélie Dupont'),
+('Juliette', 'Poirier', 'Database Administrator', '555-0319', '010-23-4567', 'Kevin Poirier 555-0320', 'Félix Morel'),
+('Kevin', 'Barbier', 'Product Owner', '555-0321', '121-34-5678', 'Laura Barbier 555-0322', 'Bastien Martin'),
+('Laura', 'Leclerc', 'Scrum Master', '555-0323', '232-45-6789', 'Maxime Leclerc 555-0324', 'Claire Lefevre'),
+('Maxime', 'Collin', 'Software Engineer', '555-0325', '343-56-7890', 'Nina Collin 555-0326', 'Amélie Dupont'),
+('Nina', 'Vasseur', 'HR Specialist', '555-0327', '454-67-8901', 'Oscar Vasseur 555-0328', 'David Dubois'),
+('Oscar', 'Giraud', 'QA Engineer', '555-0329', '565-78-9012', 'Pauline Giraud 555-0330', 'David Dubois'),
+('Pauline', 'Noel', 'UX Designer', '555-0331', '676-89-0123', 'Quentin Noel 555-0332', 'Claire Lefevre'),
+('Quentin', 'Benoit', 'Business Analyst', '555-0333', '787-90-1234', 'Romane Benoit 555-0334', 'Bastien Martin'),
+('Romane', 'Perrot', 'Software Engineer', '555-0335', '898-01-2345', 'Samuel Perrot 555-0336', 'Amélie Dupont'),
+('Samuel', 'Marchal', 'DevOps Engineer', '555-0337', '909-12-3456', 'Théo Marchal 555-0338', 'David Dubois'),
+('Théo', 'Faucher', 'Team Lead', '555-0339', '010-23-4567', 'Ursula Faucher 555-0340', 'David Dubois');
+
+
+
+CREATE TABLE department (
+    department_id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    location VARCHAR(50)
+);
+
+
+INSERT INTO department (name, location) VALUES
+('Informatique', 'Paris'),
+('Ressources Humaines', 'Lyon'),
+('Marketing', 'Paris'),
+('Ventes', 'Marseille'),
+('Finance', 'Lille'),
+('Support Client', 'Bordeaux'),
+('Recherche et Développement', 'Grenoble'),
+('Logistique', 'Toulouse'),
+('Production', 'Strasbourg'),
+('Qualité', 'Nantes'),
+('Juridique', 'Paris'),
+('Sécurité', 'Lyon'),
+('Relations Publiques', 'Paris'),
+('Achats', 'Lille'),
+('Direction Générale', 'Paris');
+
+
+-- 1️⃣ Ajouter la colonne department_id
+ALTER TABLE employee
+ADD COLUMN department_id INT REFERENCES department(department_id);
+
+-- 2️⃣ Mettre à jour les employés avec un department_id cohérent
+-- Département 1 = Informatique
+UPDATE employee SET department_id = 1 WHERE job_title ILIKE '%Engineer%' OR job_title ILIKE '%DevOps%' OR job_title ILIKE '%Database%';
+
+-- Département 2 = Ressources Humaines
+UPDATE employee SET department_id = 2 WHERE job_title ILIKE '%HR%';
+
+-- Département 3 = Marketing
+UPDATE employee SET department_id = 3 WHERE job_title ILIKE '%Marketing%';
+
+-- Département 4 = Ventes
+UPDATE employee SET department_id = 4 WHERE job_title ILIKE '%Sales%';
+
+-- Département 5 = Finance
+UPDATE employee SET department_id = 5 WHERE job_title ILIKE '%Finance%';
+
+-- Département 6 = Support Client
+UPDATE employee SET department_id = 6 WHERE job_title ILIKE '%Support%';
+
+-- Département 7 = Recherche et Développement
+UPDATE employee SET department_id = 7 WHERE job_title ILIKE '%R&D%' OR job_title ILIKE '%Research%';
+
+-- Département 8 = Logistique
+UPDATE employee SET department_id = 8 WHERE job_title ILIKE '%Logistic%';
+
+-- Département 9 = Production
+UPDATE employee SET department_id = 9 WHERE job_title ILIKE '%Production%';
+
+-- Département 10 = Qualité
+UPDATE employee SET department_id = 10 WHERE job_title ILIKE '%QA%' OR job_title ILIKE '%Quality%';
+
+-- Département 11 = Juridique
+UPDATE employee SET department_id = 11 WHERE job_title ILIKE '%Legal%' OR job_title ILIKE '%Juridique%';
+
+-- Département 12 = Sécurité
+UPDATE employee SET department_id = 12 WHERE job_title ILIKE '%Security%' OR job_title ILIKE '%Sécurité%';
+
+-- Département 13 = Relations Publiques
+UPDATE employee SET department_id = 13 WHERE job_title ILIKE '%PR%' OR job_title ILIKE '%Relations%';
+
+-- Département 14 = Achats
+UPDATE employee SET department_id = 14 WHERE job_title ILIKE '%Purchasing%' OR job_title ILIKE '%Achats%';
+
+-- Département 15 = Direction Générale
+UPDATE employee SET department_id = 15 WHERE job_title ILIKE '%Manager%' OR job_title ILIKE '%Lead%' OR job_title ILIKE '%Owner%' OR job_title ILIKE '%Director%';
+
+
+-- 1️⃣ Création de la table project
+CREATE TABLE project (
+    project_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    employee_id INT REFERENCES employee(employee_id)
+);
+
+-- 2️⃣ Exemples d'insertion pour 20 projets
+INSERT INTO project (name, description, employee_id) VALUES
+('Website Redesign', 'Refonte complète du site web corporate', 1),
+('Mobile App Development', 'Développement d’une application mobile pour iOS et Android', 2),
+('HR Management System', 'Création d’un outil interne pour la gestion des RH', 3),
+('QA Automation', 'Mise en place des tests automatisés pour l’application', 4),
+('Cloud Migration', 'Migration des serveurs vers AWS', 5),
+('Data Analytics Dashboard', 'Création d’un dashboard pour analyser les ventes', 6),
+('Marketing Campaign Spring', 'Campagne marketing pour le printemps', 7),
+('Customer Support Chatbot', 'Développement d’un chatbot pour le support client', 8),
+('Security Audit', 'Audit complet de la sécurité interne', 9),
+('Database Optimization', 'Optimisation des performances de la base PostgreSQL', 10),
+('R&D New Feature', 'Développement d’une nouvelle fonctionnalité pour le produit phare', 11),
+('Employee Training Portal', 'Mise en place d’un portail de formation interne', 12),
+('Sales Tracking System', 'Système de suivi des ventes et KPI', 13),
+('UX Improvement', 'Amélioration de l’expérience utilisateur du site web', 14),
+('Financial Forecast', 'Prévisions financières pour le trimestre', 15),
+('Logistics Optimization', 'Optimisation des processus logistiques', 16),
+('Internal Communication Tool', 'Création d’un outil interne de communication', 17),
+('QA Regression Suite', 'Création d’une suite de tests de régression', 18),
+('Product Launch 2026', 'Lancement du nouveau produit prévu pour 2026', 19),
+('Security Monitoring', 'Mise en place d’un monitoring de la sécurité', 20);
+
+
+
+
