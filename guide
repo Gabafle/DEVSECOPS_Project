@@ -1,0 +1,16 @@
+pour appliquer le postgres-configmap.yaml : kubectl apply -f postgres-configmap.yaml
+Pour appliquer les configs de postgres-pvc.yaml (volume persistant) : kubectl apply -f postgres-pvc.yaml
+pour déployer le pod postgre sql postgres-pod.yaml : kubectl apply -f postgres-pod.yaml
+
+
+
+pour se connecter à la db il faut faire un forwarding de port :
+
+kubectl port-forward pod/postgres-pod 5432:5432
+
+
+
+ensuite on peut directement se connecter en localhost :
+
+psql -h localhost -U postgres -d mydatabase
+
