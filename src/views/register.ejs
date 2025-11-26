@@ -1,76 +1,107 @@
-<div class="card" style="max-width: 500px; margin: 2rem auto;">
-  <div class="card-header">
-    <h1 class="card-title">✨ Inscription</h1>
-    <p class="card-subtitle">Créez votre compte en quelques secondes</p>
-  </div>
-
-  <% if (error) { %>
-    <div class="alert alert-error">
-      ⚠️ <%= error %>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Licorne Rose</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="navbar-brand">
+        <span>🦄</span>
+        <span>Licorne Rose</span>
+      </a>
+      <div class="navbar-menu">
+        <a href="/login" class="btn btn-secondary">Connexion</a>
+      </div>
     </div>
-  <% } %>
+  </nav>
 
-  <% if (success) { %>
-    <div class="alert alert-success">
-      ✓ <%= success %>
+  <!-- Contenu principal -->
+  <main class="container">
+    <div class="card" style="max-width: 500px; margin: 2rem auto;">
+      <div class="card-header">
+        <h1 class="card-title">✨ Inscription</h1>
+        <p class="card-subtitle">Créez votre compte en quelques secondes</p>
+      </div>
+
+      <% if (error) { %>
+        <div class="alert alert-error">
+          ⚠️ <%= error %>
+        </div>
+      <% } %>
+
+      <% if (success) { %>
+        <div class="alert alert-success">
+          ✓ <%= success %>
+        </div>
+      <% } %>
+
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <label for="email" class="form-label">📧 Adresse email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="exemple@email.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">🔒 Mot de passe</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-input" 
+            placeholder="Minimum 6 caractères"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+          <small style="color: var(--gray-700); font-size: 0.85rem; display: block; margin-top: 0.25rem;">
+            Utilisez au moins 6 caractères pour votre sécurité
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword" class="form-label">✓ Confirmer le mot de passe</label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            name="confirmPassword" 
+            class="form-input" 
+            placeholder="Retapez votre mot de passe"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Créer mon compte →
+        </button>
+      </form>
+
+      <div class="text-center mt-3" style="padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+        <p style="color: var(--gray-700);">
+          Vous avez déjà un compte ? 
+          <a href="/login" style="font-weight: 600;">Connectez-vous ici</a>
+        </p>
+      </div>
     </div>
-  <% } %>
+  </main>
 
-  <form action="/register" method="POST">
-    <div class="form-group">
-      <label for="email" class="form-label">📧 Adresse email</label>
-      <input 
-        type="email" 
-        id="email" 
-        name="email" 
-        class="form-input" 
-        placeholder="exemple@email.com"
-        required
-        autocomplete="email"
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="password" class="form-label">🔒 Mot de passe</label>
-      <input 
-        type="password" 
-        id="password" 
-        name="password" 
-        class="form-input" 
-        placeholder="Minimum 6 caractères"
-        required
-        minlength="6"
-        autocomplete="new-password"
-      >
-      <small style="color: var(--gray-700); font-size: 0.85rem; display: block; margin-top: 0.25rem;">
-        Utilisez au moins 6 caractères pour votre sécurité
-      </small>
-    </div>
-
-    <div class="form-group">
-      <label for="confirmPassword" class="form-label">✓ Confirmer le mot de passe</label>
-      <input 
-        type="password" 
-        id="confirmPassword" 
-        name="confirmPassword" 
-        class="form-input" 
-        placeholder="Retapez votre mot de passe"
-        required
-        minlength="6"
-        autocomplete="new-password"
-      >
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-block">
-      Créer mon compte →
-    </button>
-  </form>
-
-  <div class="text-center mt-3" style="padding-top: 1rem; border-top: 1px solid var(--gray-200);">
-    <p style="color: var(--gray-700);">
-      Vous avez déjà un compte ? 
-      <a href="/login" style="font-weight: 600;">Connectez-vous ici</a>
-    </p>
-  </div>
-</div>
-
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Licorne Rose - Plateforme de gestion des utilisateurs</p>
+  </footer>
+</body>
+</html>

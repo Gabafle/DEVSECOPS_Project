@@ -1,18 +1,49 @@
-<div class="card" style="max-width: 600px; margin: 2rem auto; text-align: center;">
-  <div style="font-size: 4rem; margin-bottom: 1rem;">⚠️</div>
-  
-  <div class="card-header">
-    <h1 class="card-title">Oups ! Une erreur est survenue</h1>
-    <p class="card-subtitle">Quelque chose s'est mal passé</p>
-  </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erreur - Licorne Rose</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="navbar-brand">
+        <span>🦄</span>
+        <span>Licorne Rose</span>
+      </a>
+      <div class="navbar-menu">
+        <a href="/" class="btn btn-secondary">Accueil</a>
+      </div>
+    </div>
+  </nav>
 
-  <div class="alert alert-error" style="text-align: left;">
-    <%= typeof message !== 'undefined' ? message : 'Une erreur inattendue s\'est produite. Veuillez réessayer.' %>
-  </div>
+  <!-- Contenu principal -->
+  <main class="container">
+    <div class="card" style="max-width: 600px; margin: 2rem auto; text-align: center;">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">⚠️</div>
+      
+      <div class="card-header">
+        <h1 class="card-title">Oups ! Une erreur est survenue</h1>
+        <p class="card-subtitle">Quelque chose s'est mal passé</p>
+      </div>
 
-  <div class="btn-group mt-3">
-    <a href="/" class="btn btn-primary">← Retour à l'accueil</a>
-    <a href="/dashboard" class="btn btn-secondary">📊 Dashboard</a>
-  </div>
-</div>
+      <div class="alert alert-error" style="text-align: left;">
+        <%= typeof message !== 'undefined' ? message : 'Une erreur inattendue s\'est produite. Veuillez réessayer.' %>
+      </div>
 
+      <div class="btn-group mt-3">
+        <a href="/" class="btn btn-primary">← Retour à l'accueil</a>
+        <a href="/dashboard" class="btn btn-secondary">📊 Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Licorne Rose - Plateforme de gestion des utilisateurs</p>
+  </footer>
+</body>
+</html>

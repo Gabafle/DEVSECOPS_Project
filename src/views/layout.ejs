@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= typeof title !== 'undefined' ? title : 'Licorne Rose' %> - Licorne Rose</title>
+  <title><%= typeof title !== 'undefined' ? title + ' - ' : '' %>Licorne Rose</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -16,13 +16,13 @@
       </a>
       <div class="navbar-menu">
         <% if (typeof isAuthenticated !== 'undefined' && isAuthenticated) { %>
-          <span class="navbar-user">👤 <%= userEmail %></span>
+          <span class="navbar-user">👤 <%= typeof userEmail !== 'undefined' ? userEmail : '' %></span>
           <form action="/logout" method="POST" style="display: inline;">
             <button type="submit" class="btn btn-secondary">Déconnexion</button>
           </form>
         <% } else { %>
           <a href="/login" class="btn btn-secondary">Connexion</a>
-          <a href="/register" class="btn btn-outline">Inscription</a>
+          <a href="/register" class="btn btn-primary">Inscription</a>
         <% } %>
       </div>
     </div>
@@ -34,9 +34,8 @@
   </main>
 
   <!-- Footer -->
-  <footer style="text-align: center; padding: 2rem; color: var(--text-muted);">
-    <p>&copy; 2025 Licorne Rose - Application d'authentification</p>
+  <footer class="footer">
+    <p>&copy; 2025 Licorne Rose - Plateforme de gestion des utilisateurs</p>
   </footer>
 </body>
 </html>
-

@@ -1,56 +1,95 @@
-<div class="hero">
-  <div class="hero-emoji">🦄</div>
-  <h1 class="hero-title">Licorne Rose</h1>
-  <p class="hero-subtitle">
-    Plateforme de gestion des utilisateurs professionnelle et sécurisée
-  </p>
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Licorne Rose</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="navbar-brand">
+        <span>🦄</span>
+        <span>Licorne Rose</span>
+      </a>
+      <div class="navbar-menu">
+        <% if (isAuthenticated) { %>
+          <span class="navbar-user">👤 <%= userEmail %></span>
+          <form action="/logout" method="POST" style="display: inline;">
+            <button type="submit" class="btn btn-secondary">Déconnexion</button>
+          </form>
+        <% } else { %>
+          <a href="/login" class="btn btn-secondary">Connexion</a>
+          <a href="/register" class="btn btn-primary">Inscription</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
 
-<div class="card" style="max-width: 900px; margin: 0 auto;">
-  <div class="card-header">
-    <h2 class="card-title">Bienvenue</h2>
-    <p class="card-subtitle">Gérez vos comptes utilisateurs en toute sécurité</p>
-  </div>
-  
-  <div style="text-align: center; color: var(--gray-700); line-height: 1.8; max-width: 700px; margin: 0 auto;">
-    <p style="margin-bottom: 1rem; font-size: 1.05rem;">
-      Licorne Rose est une plateforme moderne de gestion des utilisateurs, construite avec les dernières technologies web.
-    </p>
-    <p style="margin-bottom: 1rem;">
-      Créez votre compte en quelques secondes, connectez-vous de manière sécurisée et accédez à votre tableau de bord personnalisé.
-    </p>
-    <p style="font-size: 0.95rem; color: var(--gray-700);">
-      Toutes vos données sont protégées par un système d'authentification robuste avec cryptage bcrypt et sessions sécurisées.
-    </p>
-  </div>
+  <!-- Contenu principal -->
+  <main class="container">
+    <div class="hero">
+      <div class="hero-emoji">🦄</div>
+      <h1 class="hero-title">Licorne Rose</h1>
+      <p class="hero-subtitle">
+        Plateforme de gestion des utilisateurs professionnelle et sécurisée
+      </p>
+    </div>
 
-  <div class="btn-group mt-4">
-    <% if (isAuthenticated) { %>
-      <a href="/dashboard" class="btn btn-primary">📊 Accéder au Dashboard</a>
-    <% } else { %>
-      <a href="/register" class="btn btn-primary">✨ Créer un compte</a>
-      <a href="/login" class="btn btn-secondary">🔐 Se connecter</a>
-    <% } %>
-  </div>
-</div>
+    <div class="card" style="max-width: 900px; margin: 0 auto;">
+      <div class="card-header">
+        <h2 class="card-title">Bienvenue</h2>
+        <p class="card-subtitle">Gérez vos comptes utilisateurs en toute sécurité</p>
+      </div>
+      
+      <div style="text-align: center; color: var(--gray-700); line-height: 1.8; max-width: 700px; margin: 0 auto;">
+        <p style="margin-bottom: 1rem; font-size: 1.05rem;">
+          Licorne Rose est une plateforme moderne de gestion des utilisateurs, construite avec les dernières technologies web.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          Créez votre compte en quelques secondes, connectez-vous de manière sécurisée et accédez à votre tableau de bord personnalisé.
+        </p>
+        <p style="font-size: 0.95rem; color: var(--gray-700);">
+          Toutes vos données sont protégées par un système d'authentification robuste avec cryptage bcrypt et sessions sécurisées.
+        </p>
+      </div>
 
-<div class="features-grid" style="max-width: 1000px; margin: 3rem auto;">
-  <div class="feature-card">
-    <div class="feature-icon">🔒</div>
-    <h3 class="feature-title">Sécurité maximale</h3>
-    <p class="feature-description">Cryptage bcrypt, sessions PostgreSQL et protection contre les attaques XSS/CSRF</p>
-  </div>
-  
-  <div class="feature-card">
-    <div class="feature-icon">⚡</div>
-    <h3 class="feature-title">Performance optimale</h3>
-    <p class="feature-description">Architecture moderne avec Node.js, TypeScript et Prisma ORM pour une rapidité maximale</p>
-  </div>
-  
-  <div class="feature-card">
-    <div class="feature-icon">💼</div>
-    <h3 class="feature-title">Interface professionnelle</h3>
-    <p class="feature-description">Design épuré et moderne avec un thème rose et blanc élégant</p>
-  </div>
-</div>
+      <div class="btn-group mt-4">
+        <% if (isAuthenticated) { %>
+          <a href="/dashboard" class="btn btn-primary">📊 Accéder au Dashboard</a>
+        <% } else { %>
+          <a href="/register" class="btn btn-primary">✨ Créer un compte</a>
+          <a href="/login" class="btn btn-secondary">🔐 Se connecter</a>
+        <% } %>
+      </div>
+    </div>
 
+    <div class="features-grid" style="max-width: 1000px; margin: 3rem auto;">
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3 class="feature-title">Sécurité maximale</h3>
+        <p class="feature-description">Cryptage bcrypt, sessions PostgreSQL et protection contre les attaques XSS/CSRF</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Performance optimale</h3>
+        <p class="feature-description">Architecture moderne avec Node.js, TypeScript et Prisma ORM pour une rapidité maximale</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h3 class="feature-title">Interface professionnelle</h3>
+        <p class="feature-description">Design épuré et moderne avec un thème rose et blanc élégant</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Licorne Rose - Plateforme de gestion des utilisateurs</p>
+  </footer>
+</body>
+</html>
