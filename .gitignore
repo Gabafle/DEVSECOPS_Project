@@ -37,3 +37,7 @@ logs/
 # Prisma
 prisma/migrations/**/migration.sql
 
+# Documentation markdown (cachée)
+*.md
+!README.md
+
