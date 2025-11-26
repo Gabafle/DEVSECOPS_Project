@@ -1,17 +1,18 @@
 <div class="card" style="max-width: 600px; margin: 2rem auto; text-align: center;">
-  <div style="font-size: 4rem; margin-bottom: 1rem;">😢</div>
-
+  <div style="font-size: 4rem; margin-bottom: 1rem;">⚠️</div>
+  
   <div class="card-header">
-    <h1 class="card-title">Une erreur est survenue</h1>
+    <h1 class="card-title">Oups ! Une erreur est survenue</h1>
+    <p class="card-subtitle">Quelque chose s'est mal passé</p>
   </div>
 
-  <div class="alert alert-error">
-    <%= typeof message !== 'undefined' ? message : 'Une erreur inattendue s\'est produite.' %>
+  <div class="alert alert-error" style="text-align: left;">
+    <%= typeof message !== 'undefined' ? message : 'Une erreur inattendue s\'est produite. Veuillez réessayer.' %>
   </div>
 
   <div class="btn-group mt-3">
-    <a href="/" class="btn btn-primary">Retour à l'accueil</a>
-    <a href="/dashboard" class="btn btn-outline">Dashboard</a>
+    <a href="/" class="btn btn-primary">← Retour à l'accueil</a>
+    <a href="/dashboard" class="btn btn-secondary">📊 Dashboard</a>
   </div>
 </div>
 

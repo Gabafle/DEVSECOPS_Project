@@ -1,65 +1,61 @@
 <div class="hero" style="padding: 2rem 1rem;">
-  <h1 class="hero-title" style="font-size: 2.5rem;">Dashboard</h1>
-  <p class="hero-subtitle">Bienvenue, <%= currentUserEmail %> !</p>
+  <h1 class="hero-title" style="font-size: 2.5rem;">📊 Dashboard</h1>
+  <p class="hero-subtitle">Bienvenue, <strong><%= currentUserEmail %></strong></p>
 </div>
 
 <div class="card">
   <div class="card-header">
     <h2 class="card-title" style="font-size: 1.8rem;">
-      Liste des utilisateurs inscrits
+      👥 Utilisateurs inscrits
     </h2>
     <p class="card-subtitle">
-      Total : <%= users.length %> utilisateur<%= users.length > 1 ? 's' : '' %>
+      <span class="badge badge-primary" style="font-size: 1rem; padding: 0.5rem 1rem;">
+        <%= users.length %> utilisateur<%= users.length > 1 ? 's' : '' %> au total
+      </span>
     </p>
   </div>
 
   <% if (users.length === 0) { %>
-    <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+    <div style="text-align: center; padding: 3rem; color: var(--gray-700);">
       <div style="font-size: 3rem; margin-bottom: 1rem;">📭</div>
-      <p>Aucun utilisateur inscrit pour le moment.</p>
+      <p style="font-size: 1.1rem;">Aucun utilisateur inscrit pour le moment.</p>
+      <p style="color: var(--gray-700); margin-top: 0.5rem;">Soyez le premier à créer un compte !</p>
     </div>
   <% } else { %>
     <div class="table-container">
       <table class="table">
         <thead>
           <tr>
-            <th style="width: 50px;">#</th>
+            <th style="width: 60px;">#</th>
             <th>Adresse email</th>
             <th>Date d'inscription</th>
-            <th style="width: 100px; text-align: center;">Statut</th>
+            <th style="width: 120px; text-align: center;">Statut</th>
           </tr>
         </thead>
         <tbody>
           <% users.forEach((user, index) => { %>
             <tr>
-              <td><strong><%= index + 1 %></strong></td>
+              <td><strong style="color: var(--gray-700);"><%= index + 1 %></strong></td>
               <td>
-                <%= user.email %>
+                <strong><%= user.email %></strong>
                 <% if (user.email === currentUserEmail) { %>
-                  <span style="color: var(--rose-primary); font-weight: bold; margin-left: 0.5rem;">
-                    (Vous)
+                  <span class="badge badge-primary" style="margin-left: 0.5rem;">
+                    Vous
                   </span>
                 <% } %>
               </td>
-              <td>
-                <%= new Date(user.createdAt).toLocaleDateString('fr-FR', {
-                  year: 'numeric',
-                  month: 'long',
+              <td style="color: var(--gray-700);">
+                <%= new Date(user.createdAt).toLocaleDateString('fr-FR', { 
+                  year: 'numeric', 
+                  month: 'long', 
                   day: 'numeric',
                   hour: '2-digit',
                   minute: '2-digit'
                 }) %>
               </td>
               <td style="text-align: center;">
-                <span style="
-                  background: var(--rose-secondary);
-                  color: var(--rose-dark);
-                  padding: 0.25rem 0.75rem;
-                  border-radius: 20px;
-                  font-size: 0.85rem;
-                  font-weight: 600;
-                ">
-                  Actif
+                <span class="badge badge-success">
+                  ✓ Actif
                 </span>
               </td>
             </tr>
@@ -72,7 +68,7 @@
 
 <div class="text-center mt-4">
   <a href="/" class="btn btn-outline">
-    Retour à l'accueil
+    ← Retour à l'accueil
   </a>
 </div>
 
