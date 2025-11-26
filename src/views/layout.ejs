@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Licorne Rose' %> - Licorne Rose</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="navbar-brand">
+        <span>🦄</span>
+        <span>Licorne Rose</span>
+      </a>
+      <div class="navbar-menu">
+        <% if (typeof isAuthenticated !== 'undefined' && isAuthenticated) { %>
+          <span class="navbar-user">👤 <%= userEmail %></span>
+          <form action="/logout" method="POST" style="display: inline;">
+            <button type="submit" class="btn btn-secondary">Déconnexion</button>
+          </form>
+        <% } else { %>
+          <a href="/login" class="btn btn-secondary">Connexion</a>
+          <a href="/register" class="btn btn-outline">Inscription</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <%- body %>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2rem; color: var(--text-muted);">
+    <p>&copy; 2025 Licorne Rose - Application d'authentification</p>
+  </footer>
+</body>
+</html>
+
